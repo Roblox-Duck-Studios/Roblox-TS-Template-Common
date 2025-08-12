@@ -1,0 +1,96 @@
+{
+	"name": "aetheris",
+	"version": "1.0.0",
+	"description": "",
+	"license": "ISC",
+	"author": "",
+	"main": "index.js",
+	"scripts": {
+		"build": "rojo build -o build.rbxl",
+		"clean": "rm -rf out",
+		"compile": "rbxtsc",
+		"lint": "eslint --cache --config ci-eslint.config.mjs",
+		"lint:fix": "eslint --cache --config ci-eslint.config.mjs --fix",
+		"postinstall": "patch-package && darklua process node_modules/@rbxts node_modules/@rbxts && darklua process node_modules/@flamework node_modules/@flamework && darklua process node_modules/@rbxts-js node_modules/@rbxts-js",
+		"prepare": "husky",
+		"sourcemap": "",
+		"start": "start build.rbxl && npx concurrently \"rbxtsc -w\" \"rojo serve\"",
+		"pretest": "npm run compile && npm run build",
+		"test": "lune run execute-tests"
+	},
+	"commitlint": {
+		"extends": [
+			"@commitlint/config-conventional"
+		]
+	},
+	"lint-staged": {
+		"*": "npm run lint:fix"
+	},
+	"overrides": {
+		"@rbxts/jecs": "0.9.0-rc.8",
+		"eslint": "9.32.0"
+	},
+	"dependencies": {
+		"@flamework/core": "1.3.1",
+		"@rbxts/altmake": "0.1.5",
+		"@rbxts/catppuccin": "1.0.2",
+		"@rbxts/colour-utils": "1.4.1",
+		"@rbxts/flamework-meta-utils": "1.0.7",
+		"@rbxts/immut": "0.4.4-ts.0",
+		"@rbxts/input-actions": "^0.5.0",
+		"@rbxts/iris": "2.3.1-ts.1",
+		"@rbxts/jabby": "0.3.1",
+		"@rbxts/jecs": "0.9.0-rc.8",
+		"@rbxts/jecs-addons": "2.0.0",
+		"@rbxts/jest": "3.13.2-alpha.1",
+		"@rbxts/jest-globals": "3.13.2-alpha.1",
+		"@rbxts/jsnatives": "1.1.5",
+		"@rbxts/lemon-signal": "1.2.0",
+		"@rbxts/lyra": "0.6.0",
+		"@rbxts/matter-hooks": "git+https://github.com/NormalDuck/matter-hooks-types/tree/95e517883b056fe3ebdf6e9144476873cf51312d",
+		"@rbxts/object-cache": "1.4.5",
+		"@rbxts/planck": "1.0.0",
+		"@rbxts/planck-jabby": "1.0.0",
+		"@rbxts/planck-matter-hooks": "0.1.0-rc.3",
+		"@rbxts/pretty-react-hooks": "0.6.4",
+		"@rbxts/react": "17.3.0-alpha.1",
+		"@rbxts/react-roblox": "17.3.0-alpha.1",
+		"@rbxts/remo": "1.5.2",
+		"@rbxts/replecs": "0.1.0-alpha5",
+		"@rbxts/ripple": "0.9.3",
+		"@rbxts/serio": "1.0.19",
+		"@rbxts/services": "1.5.5",
+		"@rbxts/trove": "1.3.0",
+		"@rbxts/ui-labs": "2.4.0",
+		"@rbxts/ui-scaler": "0.2.1",
+		"@rbxts/yetanothernet": "0.10.0-alpha.5",
+		"patch-package": "8.0.0"
+	},
+	"devDependencies": {
+		"@commitlint/cli": "19.8.1",
+		"@commitlint/config-conventional": "19.8.1",
+		"@eslint-react/eslint-plugin": "1.52.3",
+		"@eslint/js": "9.32.0",
+		"@isentinel/eslint-config": "1.1.2",
+		"@rbxts/compiler-types": "3.0.0-types.0",
+		"@rbxts/types": "1.0.867",
+		"concurrently": "9.2.0",
+		"eslint": "9.32.0",
+		"eslint-config-prettier": "10.1.8",
+		"eslint-plugin-prettier": "5.5.3",
+		"eslint-plugin-react-roblox-hooks": "5.1.0-rbx.1",
+		"husky": "9.1.7",
+		"lint-staged": "16.1.2",
+		"prettier": "3.5.3",
+		"rbxts-transformer-access": "1.1.2",
+		"rbxts-transformer-flamework": "1.3.1",
+		"rbxts-transformer-inline": "1.2.71",
+		"rbxts-transformer-services": "1.1.1",
+		"roblox-ts": "3.0.0",
+		"typescript": "5.8.3",
+		"typescript-eslint": "8.38.0"
+	},
+	"trustedDependencies": [
+		"husky"
+	]
+}

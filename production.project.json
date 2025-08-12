@@ -1,0 +1,91 @@
+{
+	"name": "production",
+	"globIgnorePaths": [
+		"**/package.json",
+		"**/tsconfig.json",
+		"**/*.storybook.ts",
+		"**/*.story.luau",
+		"**/*.spec.luau"
+	],
+	"tree": {
+		"$className": "DataModel",
+		"ServerScriptService": {
+			"$className": "ServerScriptService",
+			"$properties": {
+				"LoadStringEnabled": true
+			},
+			"TS": {
+				"$path": "dist/start/src/server"
+			},
+			"common": {
+				"$path": "dist/common/src/server"
+			}
+		},
+		"ServerStorage": {
+			"$className": "ServerStorage",
+			"prefab": {
+				"$path": "prefab/server"
+			}
+		},
+		"ReplicatedStorage": {
+			"$className": "ReplicatedStorage",
+			"rbxts_include": {
+				"$path": "include",
+				"node_modules": {
+					"$className": "Folder",
+					"@rbxts": {
+						"$path": "../../node_modules/@rbxts"
+					},
+					"@flamework": {
+						"$path": "../../node_modules/@flamework"
+					},
+					"@rbxts-js": {
+						"$path": "../../node_modules/@rbxts-js"
+					}
+				}
+			},
+			"TS": {
+				"$path": "dist/start/src/shared"
+			},
+			"common": {
+				"$path": "dist/common/src/shared"
+			},
+			"prefab": {
+				"$path": "prefab/shared"
+			}
+		},
+		"StarterPlayer": {
+			"$className": "StarterPlayer",
+			"StarterPlayerScripts": {
+				"$className": "StarterPlayerScripts",
+				"TS": {
+					"$path": "dist/start/src/client"
+				},
+				"common": {
+					"$path": "dist/common/src/client"
+				}
+			}
+		},
+		"Workspace": {
+			"$className": "Workspace",
+			"prefab": {
+				"$path": "prefab/client"
+			}
+		},
+		"Lighting": {
+			"$className": "Lighting"
+		},
+		"HttpService": {
+			"$className": "HttpService",
+			"$properties": {
+				"HttpEnabled": true
+			}
+		},
+		"SoundService": {
+			"$className": "SoundService",
+			"$properties": {
+				"RespectFilteringEnabled": true
+			}
+		}
+	}
+}
