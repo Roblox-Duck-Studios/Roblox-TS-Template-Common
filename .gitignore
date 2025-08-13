@@ -4,5 +4,6 @@ node_modules
 out
 include
 build.rbxl
+sourcemap.json
 
 services.d.ts
