@@ -1,0 +1,18 @@
+diff --git a/node_modules/@rbxts/yetanothernet/lib/QueryResult.luau b/node_modules/@rbxts/yetanothernet/lib/QueryResult.luau
+index 557eddb..fd7efe9 100644
+--- a/node_modules/@rbxts/yetanothernet/lib/QueryResult.luau
++++ b/node_modules/@rbxts/yetanothernet/lib/QueryResult.luau
+@@ -133,6 +133,13 @@ function QueryResult:__iter()
+ 			continue
+ 		end
+ 
++		-- DEVIATION: accept ROUTE_NETWORK_EMPTY_DO_NOT_USE to correctly patch data
++		for index, value in packet.data do
++			if value == "ROUTE_NETWORK_EMPTY_DO_NOT_USE" then
++				packet.data[index] = nil
++			end
++		end 
++
+ 		table.insert(filteredSnapshot, packet)
+ 	end
+ 

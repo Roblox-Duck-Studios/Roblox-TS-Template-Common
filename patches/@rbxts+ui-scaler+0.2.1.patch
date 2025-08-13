@@ -1,0 +1,18 @@
+diff --git a/node_modules/@rbxts/ui-scaler/src/modules/React.luau b/node_modules/@rbxts/ui-scaler/src/modules/React.luau
+index c2428cd..0ad38d2 100644
+--- a/node_modules/@rbxts/ui-scaler/src/modules/React.luau
++++ b/node_modules/@rbxts/ui-scaler/src/modules/React.luau
+@@ -1,4 +1,4 @@
+-local packages = if script.Parent.Parent.Parent.Parent:FindFirstChild("React")
++local packages = if script.Parent.Parent.Parent.Parent:FindFirstChild("react")
+ 	then script.Parent.Parent.Parent.Parent
+ 	else script.Parent.Parent.Parent.Parent:FindFirstChild("ReactLua")
+ 
+@@ -11,4 +11,4 @@ export type Context<T> = typeof((function()
+ 	return {} :: React.Context<T>
+ end)())
+ 
+-return require(packages.React) :: React
+\ No newline at end of file
++return require(packages.react) :: React
+\ No newline at end of file

@@ -1,0 +1,34 @@
+diff --git a/node_modules/@rbxts/replecs/out/replecs/init.luau b/node_modules/@rbxts/replecs/out/replecs/init.luau
+index 0758fe3..c55091b 100644
+--- a/node_modules/@rbxts/replecs/out/replecs/init.luau
++++ b/node_modules/@rbxts/replecs/out/replecs/init.luau
+@@ -1,8 +1,8 @@
+-local jecs = require "./jecs"
+-local common = require "@self/common"
++local jecs = require "../jecs"
++local common = require "./common"
+ 
+-local client = require "@self/client"
+-local server = require "@self/server"
++local client = require "./client"
++local server = require "./server"
+ 
+ export type Server = server.Server
+ export type Client = client.Client
+diff --git a/node_modules/@rbxts/replecs/out/replecs/masking/init.luau b/node_modules/@rbxts/replecs/out/replecs/masking/init.luau
+index a76cff7..b5f19c4 100644
+--- a/node_modules/@rbxts/replecs/out/replecs/masking/init.luau
++++ b/node_modules/@rbxts/replecs/out/replecs/masking/init.luau
+@@ -1,9 +1,9 @@
+ --!native
+ --!optimize 2
+ 
+-local jecs = require "../jecs"
+-local utils = require "./utils"
+-local mask_generator = require "@self/mask_generator"
++local jecs = require "../../jecs"
++local utils = require "../utils"
++local mask_generator = require "./mask_generator"
+ 
+ type Entity<T = any> = jecs.Entity<T>
+ 
