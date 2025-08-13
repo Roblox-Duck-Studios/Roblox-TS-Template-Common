@@ -19,14 +19,6 @@ end
 
 local apiKey = flags.apiKey or dotEnv.LUAU_API_KEY
 
-local buildProjectResult = process.exec("rojo", { "build", "-o", `build.rbxl` })
-
-if not buildProjectResult.ok then
-	error("Failed to build project: " .. buildProjectResult.stderr)
-else
-	print("Successfully built project:")
-end
-
 local publishResult = process.exec("lune", {
 	"run",
 	"publish",
