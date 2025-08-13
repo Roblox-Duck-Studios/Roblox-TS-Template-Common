@@ -16,7 +16,7 @@
 		"prepare": "husky",
 		"sourcemap": "lune run sync src/services.d.ts",
 		"start": "start build.rbxl && npx concurrently \"rbxtsc -w\" \"rojo serve\"",
-		"pretest": "npm run build:dev",
+		"pretest": "npm run build",
 		"test": "lune run execute-tests"
 	},
 	"commitlint": {
