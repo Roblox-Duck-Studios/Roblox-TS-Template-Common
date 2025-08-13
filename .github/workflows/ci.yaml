@@ -25,5 +25,5 @@ jobs:
         env:
           PUBLISH_API_KEY: ${{ secrets.PUBLISH_API_KEY }}
           LUAU_API_KEY: ${{ secrets.LUAU_API_KEY }}
-        run: 
+        run:
           npm t
