@@ -24,10 +24,9 @@ local fs = require("@lune/fs")
 local roblox = require("@lune/roblox")
 local process = require("@lune/process")
 
-local placeFilePath = process.args[1]
-local outPath = process.args[2]
+local outPath = process.args[1]
 
-local game = roblox.deserializePlace(fs.readFile(placeFilePath))
+local game = roblox.deserializePlace(fs.readFile("build.rbxl"))
 
 local SERVICE_BLACKLIST = {
 	StarterPlayer = true,

@@ -1,6 +1,7 @@
 {
-	"name": "aetheris",
+	"name": "simple-rpg-lib",
 	"version": "1.0.0",
+	"private": true,
 	"description": "",
 	"license": "ISC",
 	"author": "",
@@ -9,13 +10,13 @@
 		"build": "rojo build -o build.rbxl",
 		"clean": "rm -rf out",
 		"compile": "rbxtsc",
-		"lint": "eslint --cache --config ci-eslint.config.mjs",
-		"lint:fix": "eslint --cache --config ci-eslint.config.mjs --fix",
+		"lint": "eslint",
+		"lint:fix": "eslint --fix",
 		"postinstall": "patch-package && darklua process node_modules/@rbxts node_modules/@rbxts && darklua process node_modules/@flamework node_modules/@flamework && darklua process node_modules/@rbxts-js node_modules/@rbxts-js",
 		"prepare": "husky",
-		"sourcemap": "",
+		"sourcemap": "lune run sync src/services.d.ts",
 		"start": "start build.rbxl && npx concurrently \"rbxtsc -w\" \"rojo serve\"",
-		"pretest": "npm run compile && npm run build",
+		"pretest": "npm run build:dev",
 		"test": "lune run execute-tests"
 	},
 	"commitlint": {

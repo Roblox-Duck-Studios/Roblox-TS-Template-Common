@@ -12,17 +12,11 @@
 				"LoadStringEnabled": true
 			},
 			"TS": {
-				"$path": "out/start/src/server"
-			},
-			"common": {
-				"$path": "out/common/src/server"
+				"$path": "out/server"
 			}
 		},
 		"ServerStorage": {
-			"$className": "ServerStorage",
-			"prefab": {
-				"$path": "prefab/server"
-			}
+			"$className": "ServerStorage"
 		},
 		"ReplicatedStorage": {
 			"$className": "ReplicatedStorage",
@@ -31,24 +25,18 @@
 				"node_modules": {
 					"$className": "Folder",
 					"@rbxts": {
-						"$path": "../../node_modules/@rbxts"
+						"$path": "node_modules/@rbxts"
 					},
 					"@flamework": {
-						"$path": "../../node_modules/@flamework"
+						"$path": "node_modules/@flamework"
 					},
 					"@rbxts-js": {
-						"$path": "../../node_modules/@rbxts-js"
+						"$path": "node_modules/@rbxts-js"
 					}
 				}
 			},
 			"TS": {
-				"$path": "out/start/src/shared"
-			},
-			"common": {
-				"$path": "out/common/src/shared"
-			},
-			"prefab": {
-				"$path": "prefab/shared"
+				"$path": "out/shared"
 			}
 		},
 		"StarterPlayer": {
@@ -56,24 +44,15 @@
 			"StarterPlayerScripts": {
 				"$className": "StarterPlayerScripts",
 				"TS": {
-					"$path": "out/start/src/client"
-				},
-				"common": {
-					"$path": "out/common/src/client"
+					"$path": "out/client"
 				}
 			}
 		},
 		"ReplicatedFirst": {
-			"$className": "ReplicatedFirst",
-			"prefab": {
-				"$path": "prefab/start"
-			}
+			"$className": "ReplicatedFirst"
 		},
 		"Workspace": {
-			"$className": "Workspace",
-			"prefab": {
-				"$path": "prefab/client"
-			}
+			"$className": "Workspace"
 		},
 		"Lighting": {
 			"$className": "Lighting"

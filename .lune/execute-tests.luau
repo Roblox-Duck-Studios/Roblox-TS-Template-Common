@@ -11,8 +11,6 @@ local DEBUG = false
 
 local flags = processFlags({
 	["--api-key"] = "apiKey",
-	["-p"] = "project",
-	["--project"] = "project",
 }, process.args)
 
 if not (flags.apiKey or dotEnv.LUAU_API_KEY) then
@@ -23,21 +21,15 @@ local apiKey = flags.apiKey or dotEnv.LUAU_API_KEY
 
 local buildProjectResult = process.exec("rojo", { "build", "-o", `build.rbxl` })
 
-if DEBUG then
-	print("Building project:")
-end
-
 if not buildProjectResult.ok then
 	error("Failed to build project: " .. buildProjectResult.stderr)
 else
-	print("Successfully built project:", flags.project)
+	print("Successfully built project:")
 end
 
 local publishResult = process.exec("lune", {
 	"run",
 	"publish",
-	"--project",
-	flags.project,
 	"--universe-id",
 	"8049404126",
 	"--place-id",

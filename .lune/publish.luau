@@ -9,8 +9,6 @@ local dotEnv = require("./dotenv")
 type FlagsTable = { [string]: unknown? }
 
 local flags = processFlags({
-	["--project"] = "project",
-	["-p"] = "project",
 	["--file"] = "file",
 	["-f"] = "file",
 	["--universe-id"] = "universeId",
@@ -32,7 +30,6 @@ if not (flags.apiKey or dotEnv.PUBLISH_API_KEY) then
 end
 
 local apiKey = flags.apiKey or dotEnv.PUBLISH_API_KEY
-local project = flags.project
 local file = fs.readFile(flags.file or "build.rbxl")
 
 local result = net.request({
@@ -46,7 +43,7 @@ local result = net.request({
 })
 
 if result.ok then
-	print(`Successfully uploaded place version for project "{project}": {result.body}`)
+	print(`Successfully uploaded place": {result.body}`)
 else
-	error(`Failed to upload place version for project "{project}": {result.statusCode} {result.statusMessage}`)
+	error(`Failed to upload place": {result.statusCode} {result.statusMessage}`)
 end

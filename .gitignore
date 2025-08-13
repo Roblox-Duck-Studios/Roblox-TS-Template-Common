@@ -3,3 +3,6 @@ node_modules
 .env
 out
 include
+build.rbxl
+
+services.d.ts
