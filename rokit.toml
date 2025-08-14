@@ -1,6 +1,6 @@
 [tools]
 rojo = "rojo-rbx/rojo@7.5.1"
-asphalt = "jackTabsCode/asphalt@0.9.1"
+asphalt = "jackTabsCode/asphalt@1.0.0-pre.15"
 darklua = "seaofvoices/darklua@0.17.0"
 lune = "lune-org/lune@0.10.1"
 run-in-roblox = "rojo-rbx/run-in-roblox@0.3.0"
