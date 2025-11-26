@@ -13,10 +13,7 @@ jobs:
                   version: 10
 
             - name: install packages
-              run: pnpm i
-
-            - name: install packages
-              run: pnpm ci
+              run: pnpm i --ignore-scripts
 
             - name: run linter
               run: pnpm run lint
