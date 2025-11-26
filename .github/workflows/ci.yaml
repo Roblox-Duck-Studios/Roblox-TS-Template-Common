@@ -1,29 +1,32 @@
 on:
-  push:
+    push:
 
 jobs:
-  lint:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
-      - uses: CompeyDev/setup-rokit@d49be92bd9502180218c3f43e7988faa945217b0 # v0.1.2
-      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
-        with:
-          node-version: latest
+    lint:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+            - uses: CompeyDev/setup-rokit@d49be92bd9502180218c3f43e7988faa945217b0 # v0.1.2
 
-      - name: install packages
-        run: npm ci
+            - uses: pnpm/action-setup@v4
+              with:
+                  version: 10
 
-      - name: run linter
-        run: npm run lint
+            - name: install packages
+              run: pnpm i
 
-      - name: compile files
-        run: npm run compile
+            - name: install packages
+              run: pnpm ci
 
-      - name: run tests
-        shell: bash
-        env:
-          PUBLISH_API_KEY: ${{ secrets.PUBLISH_API_KEY }}
-          LUAU_API_KEY: ${{ secrets.LUAU_API_KEY }}
-        run:
-          npm t
+            - name: run linter
+              run: pnpm run lint
+
+            - name: compile files
+              run: pnpm run compile
+
+            - name: run tests
+              shell: bash
+              env:
+                  PUBLISH_API_KEY: ${{ secrets.PUBLISH_API_KEY }}
+                  LUAU_API_KEY: ${{ secrets.LUAU_API_KEY }}
+              run: pnpm t

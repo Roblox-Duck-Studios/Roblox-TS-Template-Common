@@ -6,16 +6,14 @@
 		"jsxFragmentFactory": "React.Fragment",
 		"moduleDetection": "force",
 		"noLib": true,
-
 		"experimentalDecorators": true,
 		// configurable
 		"baseUrl": "src",
-
 		"rootDir": "./src",
 		"module": "commonjs",
 		"moduleResolution": "Node",
 		"resolveJsonModule": true,
-		"typeRoots": ["./node_modules/@rbxts", "./node_modules/@flamework"],
+		"typeRoots": ["node_modules/@rbxts", "node_modules/@flamework"],
 		"strict": true,
 		"downlevelIteration": true,
 		"outDir": "./out",
@@ -24,17 +22,16 @@
 		"forceConsistentCasingInFileNames": true,
 		"plugins": [
 			{
-				"transform": "rbxts-transformer-services"
-			},
-			{
-				"transform": "rbxts-transformer-access"
+				"transform": "rbxts-transformer-debug"
 			},
 			{
 				"transform": "rbxts-transformer-flamework"
 			},
 			{
-				"transform": "rbxts-transformer-inline"
+				"transform": "rbxts-transformer-env"
 			}
 		]
-	}
+	},
+	"include": ["**/*"],
+	"exclude": ["**/*eslint.config.ts", "**/*commitlint.config.ts"]
 }
