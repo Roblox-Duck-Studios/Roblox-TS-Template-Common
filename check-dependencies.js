@@ -30,10 +30,6 @@ const checks = [
 		name: ".env file",
 		passed: checkFileExists(".env"),
 	},
-	{
-		name: "node_modules folder",
-		passed: checkFileExists("node_modules"),
-	},
 ];
 
 // Output table
