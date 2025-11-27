@@ -85,7 +85,7 @@ catalogs:
       specifier: 20.0.0
       version: 20.0.0
     concurrently:
-      specifier: 9.2.1
+      specifier: catalog:script
       version: 9.2.1
     git-pull-run:
       specifier: 1.6.2
