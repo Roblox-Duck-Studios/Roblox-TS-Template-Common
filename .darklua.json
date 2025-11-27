@@ -21,9 +21,7 @@
 		"remove_types",
 		{
 			"rule": "remove_comments",
-			"except": [
-				"^!"
-			]
+			"except": ["^!"]
 		},
 		{
 			"rule": "convert_require",

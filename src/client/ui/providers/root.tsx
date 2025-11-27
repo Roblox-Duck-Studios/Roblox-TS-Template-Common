@@ -3,6 +3,6 @@ import React from "@rbxts/react";
 
 import { ScaleProvider } from "./scale";
 
-export function RootProvider({ children }: PropsWithChildren): React.ReactNode {
+export function RootProvider({ children }: Readonly<PropsWithChildren>): React.ReactNode {
 	return <ScaleProvider>{children}</ScaleProvider>;
 }

@@ -76,7 +76,5 @@
 		"source.fixAll.eslint": "explicit",
 		"source.removeUnusedImports": "always"
 	},
-	"eslint.workingDirectories": [
-		"places/**"
-	]
+	"eslint.workingDirectories": ["places/**"]
 }

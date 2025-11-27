@@ -5,7 +5,7 @@ import { useScaler } from "@rbxts/ui-scaler";
 import { ScalerContext } from "../contexts/scale";
 
 /** @ignore */
-export function ScaleProvider({ children }: PropsWithChildren): ReactNode {
+export function ScaleProvider({ children }: Readonly<PropsWithChildren>): ReactNode {
 	return (
 		<ScalerContext.Provider value={useScaler(new Vector2(1920, 1080))}>
 			{children}
