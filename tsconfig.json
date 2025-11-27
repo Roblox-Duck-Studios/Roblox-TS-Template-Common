@@ -13,7 +13,12 @@
 		"module": "commonjs",
 		"moduleResolution": "Node",
 		"resolveJsonModule": true,
-		"typeRoots": ["node_modules/@rbxts", "node_modules/@flamework"],
+		"typeRoots": [
+			"node_modules/@rbxts",
+			"node_modules/@flamework",
+			"../node_modules/@rbxts",
+			"../node_modules/@flamework"
+		],
 		"strict": true,
 		"downlevelIteration": true,
 		"outDir": "./out",
