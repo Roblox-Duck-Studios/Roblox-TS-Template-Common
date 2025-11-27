@@ -20,6 +20,7 @@
 		// required
 		"allowSyntheticDefaultImports": true,
 		"forceConsistentCasingInFileNames": true,
+		"preserveSymlinks": true,
 		"plugins": [
 			{
 				"transform": "rbxts-transformer-debug"
